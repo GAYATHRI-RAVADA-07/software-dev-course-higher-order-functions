@@ -107,12 +107,24 @@ function applyDiscount(discountPercent) {
   };
 }
 
-const discountedProducts = products.map(function(product) {
+// Create discount function (example: 10% discount)
+const discount10 = applyDiscount(10);
+
+// Use forEach to apply discount to each product
+products.forEach(function(product) {
+  discount10(product);
+});
+
+
+/* const discountedProducts = products.map(function(product) {
+
   return {
     ...product,
     salePrice: product.price - (product.price * 10 / 100)
   };
 }); 
+Original products stays unchanged
+New array contains salePrice */
 
 
 
@@ -155,6 +167,6 @@ console.log("Filtered products:", availableProducts);
 
 console.log("Uppercased names:", productNamesUpperCase);
 
-console.log("Discounted products:", discountedProducts);
+console.log("Discounted products:", products);
 
 console.log("Total value in stock:", totalInStockValue);
