@@ -155,6 +155,6 @@ console.log("Filtered products:", availableProducts);
 
 console.log("Uppercased names:", productNamesUpperCase);
 
-console.log("Discounted products:", products);
+console.log("Discounted products:", discountedProducts);
 
 console.log("Total value in stock:", totalInStockValue);
