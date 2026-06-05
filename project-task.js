@@ -54,12 +54,9 @@ function filterProducts(products, callbackFunction) {
 // Call the function and pass:
 // 1. products array
 // 2. anonymous callback function
-const availableProducts = filterProducts(products, function(product) {
+const availableProducts = filterProducts(products, (product) => product.inStock === true);
 
-  // Return only products that are in stock
-  return product.inStock === true;
-});
-
+ 
 
 /*
 🔹 Task 2: Transform Product Names
@@ -73,11 +70,10 @@ Step-by-Step:
 */
 
 // Use map() to loop through each product and transform the name to uppercase
-const productNamesUpperCase = products.map(function(product) {
+const productNamesUpperCase = products.map((product) => product.name.toUpperCase());
 
-  // Return only the name in uppercase
-  return product.name.toUpperCase();
-});
+  
+   
 
 
 /*
@@ -111,9 +107,9 @@ function applyDiscount(discountPercent) {
 const discount10 = applyDiscount(10);
 
 // Use forEach to apply discount to each product
-products.forEach(function(product) {
-  discount10(product);
-});
+products.forEach((product) => discount10(product));
+  
+
 
 
 /* const discountedProducts = products.map(function(product) {
@@ -147,17 +143,15 @@ Use `reduce()` to calculate the total value of products that are currently in st
 
 const totalInStockValue = products.reduce(function(accumulator, product) {
 
-  // Only include products that are in stock
   if (product.inStock) {
     return accumulator + product.price;
   }
 
-  // If not in stock, ignore it
   return accumulator;
 
 }, 0);
 
-
+//const reduced = products.filter(product => product.inStock).reduce((total,product) => total + product.price,0);
 
 // ============================================
 // 🧪 Console Test Your Work
